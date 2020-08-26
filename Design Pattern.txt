@@ -1,0 +1,139 @@
+(1) SOLID Principle
+=> S = Single Responsibility
+		Book Handler - Save - Print - BookPersitent
+		Separate Behaviour
+		Book(class - I) - BookPersitent - BookHandler (I)
+		Book.Save()
+		
+		Public Book(String authorName, int noOfPages){
+			this.authorName = authorName;
+			this.noOfPages = noOfPages;
+			this.bookPersitense = new BookPersitent();
+		}
+		
+=> O = Open Close Principle
+       Open for extension and close for modification
+	   If we add new behaviour then do not change existing behaviour
+	   avoid changes in existing module
+	   SorterManager (C) - Sorter (I) - InsertionSort (C - I) - MergeSort (C - I) - QuickSort (C - I)
+       SorterManager.sort(Sorter sorter);	   
+	   
+=> L = Luskov Subtitution
+       new Derived calasses works well without changing functionality of existing classes
+	   How to create derived class
+	   child class never break parent class defination
+	   derived type must be substitue with base type
+	   Vehical (I) - Car (C - I) - Electric Car (C - I)	- ElectricVehicle(-spped(), chargeBattery()) - NormalVehicle (I) (-speed(), -addFuel())
+		
+=> I = Interface Segregation
+       Interface should not contains lots of method
+	   We should make interfaces according its behaviour
+       Tree(I) (getMax(), getMin(), traverse() int type) - IBalancedTree(I) (-leftRotation(), -rightRotation()) - BinarySearchTree(I) - BalancedTree (I, I) 
+	   Tree BalancedTree = new BalancedTree();
+	   
+=> D = Dependacy Injection
+	   Database (I) (connect(), disconnect()) - MySQLDatabase (C - I) - SQLDatabase (C - I) - DatabaseHandler (new DatabaseHandler(Database)) (C)
+
+(2) Behavioural
+=> Stratergy
+   Stratergy (I) - int operation(int, int) - Add (C - I) - Multiplication (C - I) - Manager (C - I) (setStratergy(Stratergy stratergy))
+	
+=> Template
+	Algorithm (I) (initialize(), sorting(), printResult()) - BubbleSort (C - I) - SelectionSort (C - I) - InsertionSort (C - I)
+   Implement Construtors (BubbleSort(Numbers[]));
+
+=> Iterator
+   Iterator(I) - NameIterator (C - I) - NameRepository - (C)
+   
+   public Iterator getIterator(){
+		return new NameIterator(names);
+   }
+   
+   String[] names = {"Divyang", "Harsh", "Vivek"};
+   NameRepository nameRepository = new NameRepository(names);
+   Iterator itr = nameRepository.getIterator();
+
+=> Observer
+   Subject (I) (addObserver(), removeObserver(), notifyAllObserver()) Observer (I) (update(int pressure, int temprature, int humudity)) 
+   WeatherStation (C - I) - WeatherObserver - (C - I) 
+   
+   public WeatherObserver(Subject subject){
+		this.subject = subject;
+		this.subject.addObserver(this);
+   }
+
+Structural
+=> Decorator
+   Bevarage (I) (getCost(), getDescription()) - Milk (C - I) - Sugar (C - I) - PlainBevarage (C - I)
+   But Milk and Sugar Inject Bevarage and also implements Bevarage
+
+=> Facade
+	SorterManager(C) - Sorter(I) - BubbleSort(C - I) - QuickSort (C - I) - MergeSort (C - I)
+	public SorterManager(){
+		this.bubbleSort = new BubbleSort();
+		this.quickSort = new QuickSort();
+		this.MergeSort = new MergeSort();
+	}
+   	doQuickSort();
+	doMergeSort();
+	doBubbleSort();
+
+=> Adapter
+	Vehicle (I) - Car (C - I) - Bus (C - I) - Bicycle - BicycleAdapter (C - I) (also inject bicycle)
+	Vehicle bicycle = new BicycleAdapter(new Bicycle());
+
+Creational
+=> Singletone
+	CacheInstance
+	public static GFG getInstance() 
+  { 
+    if (instance == null)  
+    { 
+      //synchronized block to remove overhead 
+      synchronized (GFG.class) 
+      { 
+        if(instance==null) 
+        { 
+          // if instance is null, initialize 
+          instance = new GFG(); 
+        } 
+        
+      } 
+    } 
+    return instance; 
+  } 
+  
+  public enum SingletoneClass {
+  
+  INSTANCE;
+  
+  private int counter;
+  
+  setCounter();
+  getCounter();
+  
+  }
+  
+  SingletoneClass.INSTANCE.setCounter
+  
+
+=> Prototype
+	Clone object return
+
+=> Abstract Factory
+	Algorthm (I) - SortestPath (C - I) - SpanningTree (C - I) - AlgorithmFactory (C) (createAlgorithm(int type))
+
+=> Builder Pattern
+	Pojo where instance are more reQuired
+	Person person = new Person.Builder().setAge().setAddress().build();
+	public Person(Builder builder){
+		this.name = builder.name;
+		.............
+	}
+	
+	public static class Builder(){
+		
+		public Person build(){
+			return new Person(this);
+		}
+	}

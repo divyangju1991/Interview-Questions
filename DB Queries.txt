@@ -1,0 +1,51 @@
+(1) Difference between char and varchar
+=> https://www.youtube.com/watch?v=tjNLcEIcKRU
+
+
+
+
+###################### Query Practices #####################################
+Path : E:\Web Projects\SQL Script
+
+
+create table employee (
+id INT AUTO_INCREMENT PRIMARY KEY,
+empId int, 
+name varchar(12),
+deptId int); 
+
+insert into employee(empId, name, deptId) values (123, "Divu", 5);
+
+insert into employee(empId, name, deptId) values (129, "DivuV2", 3);
+
+insert into employee(empId, name, deptId) values (789, "komal", 8);
+
+select * from employee;
+
+update employee set empId = 456, name="kam", deptId=3;
+
+update employee set empId = 123, name="divu", deptId=4 where id = 1;
+
+
+
+create table department (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name varchar(12)
+);
+
+select * from department;
+
+insert into department(name) values("IT");
+insert into department(name) values("CE");
+insert into department(name) values("MECH");
+insert into department(name) values("E");
+
+select e1.name, d.name from employee e1 left join department d on e1.deptId = d.id;
+
+select e1.name, d.name from employee e1 inner join department d on e1.deptId = d.id;
+
+select e1.name, d.name from employee e1 right join department d on e1.deptId = d.id;
+
+
+
+############################################################################

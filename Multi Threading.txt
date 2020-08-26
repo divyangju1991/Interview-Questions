@@ -1,0 +1,50 @@
+
+(1) Run thread in sequencialy
+https://www.youtube.com/watch?v=lqtl1DBLSzA
+
+(2) Cylic bariar
+=> https://www.youtube.com/watch?v=tTNrG7gAxks
+
+(3) Count Down Latch
+=> https://www.youtube.com/watch?v=59oQfkdn5mA
+
+(4) Runtime Exception Handling for Thread
+=> https://www.youtube.com/watch?v=jwxjQBY2DuY
+=> Thread.UncaughtExceptionHandler
+=> Thread.setDefaultUncaughtExceptionHandler(ex);
+
+(5) ThreadPool
+=>  1 FixxedThreadPool
+    2  CachedThreadPool
+	3 ScheduledThreadPool
+	4 SingleThreadedPool
+	
+	Runtime.getRuntime().availableProcessor()
+	
+	
+	new ThreadPoolExecutor 
+
+corePoolSize
+maxPoolSize
+KeepAliveTime
+workQueue
+
+threadFactory
+RejectedExceptionHandler
+
+Policy
+
+Abort PolicyDiscard PolicyDiscard Oldest
+CallerRunPolicy
+
+future.get()//blocked statement
+take care when write or use
+
+
+
+Completableuture.supplyAsync().thenApply().thenApply().thenAccept()	
+	
+	
+	
+
+

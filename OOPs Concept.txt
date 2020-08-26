@@ -1,0 +1,80 @@
+https://www.baeldung.com/java-composition-aggregation-association
+
+
+1 Abstration
+2 Inheritence
+3 Polymorphishm
+
+4 Aggerygation
+=> Tow unrelated object connected with each other
+
+It represents Has-A relationship.
+It is a unidirectional association i.e. a one way relationship. For example, department can have students but vice versa is not possible and thus unidirectional in nature.
+In Aggregation, both the entries can survive individually which means ending one entity will not effect the other entity
+
+
+When do we use Aggregation ??
+Code reuse is best achieved by aggregation.
+
+class Wheel {}
+ 
+class Car {
+    List<Wheel> wheels;
+}
+
+
+
+5 Composition
+=> Composition is a “belongs-to” type of relationship
+=>  if we destroy the owner object, its members also will be destroyed with it.
+
+class Building {
+    class Room {}   
+}
+
+public class Car {
+    //final will make sure engine is initialized
+    private final Engine engine;  
+       
+    public Car(){
+       engine  = new Engine();
+    }
+}
+
+class Engine {
+    private String type;
+}
+
+
+
+Read more: https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html#ixzz6TlRfv9VC
+
+
+
+=> In composition, both the entities are dependent on each other.
+If Library gets destroyed then All books within that particular library will be destroyed. i.e. book can not exist without library. 
+
+
+Type of Relationship: Aggregation relation is “has-a” and composition is “part-of” relation.
+
+6 Cohension (Modularity)
+  => How inter-module connect with each other
+  => Spring WEb module,
+  Spring Core Module
+  Spring Security Module
+  to achieve follow Single Responsibility Priniciple
+  
+7 Coupling
+   Tighly Coupling
+   
+   Loose Cooupling
+   
+8 Association
+  Association only means that the objects “know” each other. F
+  It isn't a “has-a” relationship, none of the objects are parts or members of another.
+
+class Child {}
+ 
+class Mother {
+    List<Child> children;
+}

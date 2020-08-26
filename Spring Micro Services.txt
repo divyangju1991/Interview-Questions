@@ -1,0 +1,157 @@
+Architecture 
+https://www.youtube.com/results?search_query=%23microservice
+
+
+
+https://howtodoinjava.com/spring5/hateoas/spring-hateoas-tutorial/
+
+(1) Tomcat Port Configuration
+=> Server.port => in application.property
+=> application.property is used for db configuratuon internationalization logger configuration
+=> another poerty used Eurekas Server Configuration
+
+=> @SpringBootApplication
+=> @Configuration In Spring project whatever required configure in xml file auto-configuration haapeen with this annotation
+such like Bean Configuration
+
+
+(1) Put Mapping VS Patch Mapping
+=> https://javarevisited.blogspot.com/2016/10/difference-between-put-and-post-in-restful-web-service.html
+
+(2) Crud Operation
+=>
+
+(3) Validation
+
+(3b) Global Exception Handler
+=> extends ResponseEntityExceptionHandler
+   on Method Level Annotaion @ExceptionHandler(UserNotFound.class)
+   
+   @Overrride
+   handleMethodArgumentNotValid(){
+   }
+
+(4) Spring IO initializer
+=>
+
+(5) Difference between Post, Put, Rest
+=> Put is idempotent
+
+(6) What is spring Boot
+=> https://dzone.com/articles/the-simple-guide-to-http-verbs-patch-put-and-post
+
+(7) HATEOAS
+=> Add href link in response
+
+(8) Internationalization
+=>
+
+(9) JackSon Dataformat Xml
+=>
+
+(10) Header & Content Negotiation Approach
+=> API-VERSION=1
+=> produces = "application/Vmd.company.app2+json"
+
+(11) Spring Flux 
+=> Mono & Flux (Asyncronous Programming)
+=> Asyncronous Programming similar like Ajax call
+=> 
+
+(12) Fault Talerance
+=> ServiceA -> ServiceB -> ServiceC 
+   Error<-ServiceA <- ServiceB <- ServiceC
+   (Due to getting every time 500 or overflow erro or service down)
+   
+   (1) Cached Response
+   (2) Fallback (Redirect to 3rd Party Service or Send to call to Service which is available for If Service Down)
+   (3) Recover
+   
+   Circuit is opened means serviceC is down (ServiceB ServiceC)
+   Circuit is Closed means ServiceC is up (ServiceB -> ServiceC) 
+   HalfOpen it means its checking whethere cicuit is breaking or not
+   
+   https://www.youtube.com/watch?v=5XeVoHtFGo0&list=WL&index=9&t=0s
+   
+   
+
+   If SeriveC is down then all service down
+   Services are interacting with each other 
+
+=> HyStrix
+   on @SpringBootApplication(Main Class) @EnableHystrix 
+   
+   on Contrroler @HystrixCommand(fallbackMethod="fallbackRetrivedCOnfiguration")
+   
+   @GetMapping("/fault-tolerance-ex")
+   public LinitConfiguration(){
+		throw RE()
+   }
+   
+   //graceFulBehaviour or Default Behaviour
+   public LimitConfiguration fallBackRetriveConfiguratu=ion(){
+		return new LimitConfiguration(9, 999);
+   }
+   
+   Eureka Naming Server
+   @EnableEurekaServer
+   
+=> Oauth2
+
+  For Ihub or eEHX side for validation
+  @EnableResourceServer
+  
+  @EnableAuthorizationServer
+  
+  At CLient
+  @EnableOAuth2SSO
+   
+
+(13) Actuator with Hal Browser
+=> For Monitor Health Check, Thread Dumps using Hal Browser
+
+(14) Swagger
+=> For API documentation
+=> @Configuration
+   @EnableSwagger2
+
+(15) API Gateway Design For CLoud
+- Authentication, Authorization and Security
+- Rate Linits
+- Fault Tolerance
+- Service Aggregation 
+
+   1 Zuul Proxy Gateway implements
+    (Required from spring io : Zuul, Eureka Discovery, Actuator, Devtools)
+	
+	
+	Below both Write on @SpringBootApplication
+	@EnableZuulProxy
+	@EnableDiscoveryCLient
+	
+	in property file
+	eureka.client.service.url.default-soze = http://
+	
+	@Component
+	public class ZuulLoggingFilter implements ZuulFilter
+	
+	filterOrder (get priority for filter)
+	shouldFilter() (to execute filter or not)
+	filterType() (error)
+	run() (For Logging filter or for logging exception)
+	
+	On controller
+	@FeignCLient(name="")
+    @RibbonCLient(name="")
+	
+(16) Distributed Transaction
+=> https://www.youtube.com/watch?v=S4FnmSeRpAY
+   
+   Saga
+   Two Phase Commit
+   
+   
+(17) Spring MicroServices Financial Real Time Experience
+=> https://www.youtube.com/watch?v=X0tjziAQfNQ
+=> https://www.youtube.com/watch?v=fnediEWRuyI   
+

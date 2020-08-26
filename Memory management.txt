@@ -1,0 +1,10 @@
+(1) The Java Memory Model - The Basics
+=> https://www.youtube.com/watch?v=LCSqZyjBwWA&feature=youtu.be
+
+(2) Garbage collection in Java
+=> https://www.youtube.com/watch?v=UnaNQgzw4zY&t=1361s
+
+(3) Class Model
+=> https://www.youtube.com/watch?v=txkOG9FdsyQ
+
+()

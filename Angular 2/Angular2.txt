@@ -1,0 +1,41 @@
+For Learning 
+1 https://www.youtube.com/playlist?list=PLTjRvDozrdlxAhsPP4ZYtt3G8KbJ449oT
+2 uacadamy
+3 https://angular.io/guide/ajs-quick-reference
+4 https://medium.com/javascript-in-plain-english/what-is-behind-two-way-data-binding-in-angular-36dfe310b539
+5 https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407
+6 
+
+
+@Component({
+	selector: "id",
+    templateUrl:'',
+	styleUrls:['*.css'],
+	directives:[AccountList, AccountForm],
+	providers:[AccountService]
+})
+
+//Apply on all child
+.acc >* {
+	margin : 4 px;
+}
+
+@Injectable()
+export class AccountService{
+	
+	private _accounts : Array<Account> = [];
+	
+	public getAll():Array<Account>{
+		return this._accounts;
+	}
+}
+
+//Pipe Filter for UpperCase Currency Slice Number('1.2-2')
+{{t.date | date : 'd:MMM'}}
+
+import {pipe.PipeTransform} from '@angular/core'
+
+export class implements PipeTransform {
+	return trans.filter(t => tags :string{ indexOf(String)-1});
+}
+

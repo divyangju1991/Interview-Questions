@@ -1,0 +1,5 @@
+1 Finding number of digits in a number
+
+int countDigitNum(long n){
+		return (int) Math.floor(Math.log10(n) + 1);
+	}

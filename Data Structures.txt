@@ -1,0 +1,32 @@
+(1) Sorting 
+=> https://www.geeksforgeeks.org/segregate-0s-and-1s-in-an-array-by-traversing-array-once/
+=> https://www.javamadesoeasy.com/p/interview-programs-beginner-to-advanced.html#level2_programs
+
+(2) How TreeMap Internal Works
+=> https://medium.com/xebia-engineering/treemap-internals-199e0e0050b5#:~:text=Apart%20from%20implementing%20the%20Map,to%20be%20used%20for%20ordering.
+
+(3) Why HashMap required HashCode and Equals
+=> https://medium.com/@pulapaphani/why-overriding-equals-and-hashcode-in-java-b5f869f985d2
+
+(4) Required things for HashMap
+=> 1 must be override equals and hashcode
+=> 2 Key should be Immutable
+
+(5) TreeMap
+=> has Unique Key
+=> B-Tree Structure
+=> Each node is either red or black
+=> Red Black Tree
+=> Root node is black
+   (This rule is sometimes omitted. Since the root can always be changed from red to black, but not necessarily vice versa, this rule has little effect on analysis.)
+=> All leaves (NIL) or child nodes are black
+=> Left side all nodes less than root node
+=> Right side all nodes greater than root node
+=> Every path from a given node to any of its descendant NIL nodes contains the same number of black nodes.
+
+(6) How to sort Large no of data
+=> https://www.geeksforgeeks.org/algorithms-searching-and-sorting-question-16/
+=> https://www.youtube.com/watch?v=FwCO-NFMm_0
+=> Parallel run Merge sort
+=> https://www.geeksforgeeks.org/external-sorting/
+=> https://www.youtube.com/watch?v=FwCO-NFMm_0
